@@ -10,7 +10,10 @@ export default {
     extend: {
       fontFamily: {
         poppins: "Poppins, serif"
-      }
+      },
+      colors: {
+        primary: "#a4cc6f",
+      },
     },
   },
   plugins: [daisyui],

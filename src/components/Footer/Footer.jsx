@@ -3,7 +3,7 @@ import { FaFacebook, FaInstagram, FaYoutube } from 'react-icons/fa';
 const Footer = () => {
 
     return (
-        <footer className='bg-[#a4cc6f] '>
+        <footer className='bg-primary '>
             <section className=" text-black p-16  md:text-center max-w-5xl mx-auto">
 
                 {/* Footer heading */}
