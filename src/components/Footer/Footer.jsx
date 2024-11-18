@@ -1,10 +1,9 @@
-import { Link } from 'react-router-dom';
 import footerDraw from '../../assets/donation-box.png'
 import { FaFacebook, FaInstagram, FaYoutube } from 'react-icons/fa';
 const Footer = () => {
 
     return (
-        <footer className='bg-[#a4cc6f]'>
+        <footer className='bg-[#a4cc6f] '>
             <section className=" text-black p-16  md:text-center max-w-5xl mx-auto">
 
                 {/* Footer heading */}
@@ -14,7 +13,7 @@ const Footer = () => {
                 </div>
 
                 <div className="footer md:items-center justify-between">
-                    <img className='h-56 -ml-8 -mb-5 md:-mb-0 md:-ml-0' src={footerDraw} alt="" />
+                    <img className='h-56 -ml-8 -mb-5 md:-mb-0 md:-ml-0 hover:scale-90' src={footerDraw} alt="" />
 
                     <nav>
                         <h6 className="footer-title">Services</h6>
