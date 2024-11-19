@@ -3,3 +3,12 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+  --swiper-theme-color: #d8efcc !important;
+}
+
+html {
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+}

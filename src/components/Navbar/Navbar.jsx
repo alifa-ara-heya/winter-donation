@@ -3,7 +3,7 @@ import './Navbar.css'
 
 const Navbar = () => {
     const getNavLinkActiveClass = ({ isActive }) =>
-        `${isActive ? 'bg-[#a4cc6f] text-black' : 'bg-none'}`;
+        `${isActive && 'bg-[#a4cc6f] focus:bg-[#a4cc6f] text-black'}`;
 
     const links = <>
         <li><NavLink className={getNavLinkActiveClass} to='/'>Home</NavLink></li>
@@ -32,14 +32,14 @@ const Navbar = () => {
                     </div>
                     <ul
                         tabIndex={0}
-                        className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
+                        className="menu menu-sm dropdown-content bg-base-100 rounded-box z-20 mt-3 backdrop-blur-md bg-white/30 w-52 p-2 shadow space-y-3 text-white">
                         {links}
                     </ul>
                 </div>
                 <a className="btn btn-ghost text-2xl ">Winter Aid</a>
             </div>
             <div className="navbar-center hidden lg:flex">
-                <ul className="menu menu-horizontal px-1 gap-10">
+                <ul className="menu menu-horizontal !important px-1 gap-10">
                     {links}
                 </ul>
             </div>
