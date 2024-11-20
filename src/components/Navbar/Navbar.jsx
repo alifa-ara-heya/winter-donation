@@ -1,7 +1,12 @@
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import './Navbar.css'
+import { useContext } from "react";
+import { AuthContext } from "../../Providers/AuthProvider";
 
 const Navbar = () => {
+
+    const { user, signOutUser } = useContext(AuthContext);
+
     const getNavLinkActiveClass = ({ isActive }) =>
         `${isActive && 'bg-[#a4cc6f] focus:bg-[#a4cc6f] text-black'}`;
 
@@ -10,6 +15,7 @@ const Navbar = () => {
         <li><NavLink className={getNavLinkActiveClass} to='/donation-campaigns'>Donation campaigns</NavLink></li>
         <li><NavLink className={getNavLinkActiveClass} to='/how-to-help'>How to Help</NavLink></li>
         <li><NavLink className={getNavLinkActiveClass} to='/dashboard'>Dashboard</NavLink></li>
+        <li><NavLink className={getNavLinkActiveClass} to='/register'>Register</NavLink></li>
     </>
 
     return (
@@ -32,19 +38,29 @@ const Navbar = () => {
                     </div>
                     <ul
                         tabIndex={0}
-                        className="menu menu-sm dropdown-content bg-base-100 rounded-box z-20 mt-3 backdrop-blur-md bg-white/30 w-52 p-2 shadow space-y-3 text-white">
+                        className="menu menu-sm dropdown-content bg-base-100 rounded-box z-20 mt-3 backdrop-blur-md bg-white/30 w-52 p-2 shadow space-y-3 text-black">
                         {links}
                     </ul>
                 </div>
-                <a className="btn btn-ghost text-2xl ">Winter Aid</a>
+                <Link to='/' className="btn btn-ghost text-2xl text-lime-900 ">Winter Aid</Link>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal !important px-1 gap-10">
                     {links}
                 </ul>
             </div>
-            <div className="navbar-end">
-                <a className="btn bg-primary">Login</a>
+            <div className="navbar-end gap-4">
+                {
+                    user?.email ? (
+                        <>
+                            <img className="w-12 h-12 rounded-full" src={user.photoURL} alt="" />
+                            <button className="btn bg-primary" onClick={signOutUser}>LogOut</button>
+                        </>
+                    ) : (
+                        <Link to='/login' className="btn bg-primary">Login</Link>
+                    )
+                }
+
             </div>
         </div>
     );
