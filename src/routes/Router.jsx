@@ -9,6 +9,7 @@ import Login from "../Pages/Login";
 import Register from "../Pages/Register";
 import ForgotPassword from "../Pages/ForgotPassword";
 import UpdateProfile from "../Pages/UpdateProfile";
+import PrivateRoute from "./PrivateRoute";
 
 const Router = createBrowserRouter(
     [
@@ -31,7 +32,7 @@ const Router = createBrowserRouter(
                 },
                 {
                     path: 'dashboard',
-                    element: <Dashboard />
+                    element: <PrivateRoute><Dashboard /></PrivateRoute>
                 },
                 {
                     path: 'login',
