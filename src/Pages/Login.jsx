@@ -1,10 +1,12 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { FcGoogle } from "react-icons/fc";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../Providers/AuthProvider";
 import toast from "react-hot-toast";
 
 const Login = () => {
+    const navigate = useNavigate();
+    const [email, setEmail] = useState('');
 
     const { signInWithGoogle, signInUser, setUser, } = useContext(AuthContext);
 
@@ -19,9 +21,11 @@ const Login = () => {
                 e.target.reset();
                 setUser(result.user);
                 toast.success("Login Successful.")
+                navigate('/')
             })
             .catch(error => {
                 console.log('my sign in error is', error.message);
+                toast.error(`${error.code}`)
             })
     }
 
@@ -30,6 +34,7 @@ const Login = () => {
             .then(result => {
                 console.log('Google Login user', result.user);
                 toast.success("Login successful.")
+                navigate('/')
             })
             .catch(error => {
                 console.log('My error when logged in with Google is', error.message);
@@ -50,7 +55,9 @@ const Login = () => {
                                 <span className="label-text">Email</span>
                             </label>
                             <input type="email"
-                                name="email" placeholder="email" className="input input-bordered " required />
+                                name="email" placeholder="email" className="input input-bordered "
+                                onChange={(e) => setEmail(e.target.value)}
+                                required />
                         </div>
                         <div className="form-control">
                             <label className="label">
@@ -59,7 +66,12 @@ const Login = () => {
                             <input type="password"
                                 name="password" placeholder="password" className="input input-bordered" required />
                             <label className="label">
-                                <Link to='/forgot-password' className="label-text-alt link link-hover">Forgot password?</Link>
+                                <Link
+                                    state={{ email }}
+                                    to='/forgot-password'
+                                    className="label-text-alt link link-hover">
+                                    Forgot password?
+                                </Link>
                             </label>
                         </div>
                         <div className="form-control mt-6">

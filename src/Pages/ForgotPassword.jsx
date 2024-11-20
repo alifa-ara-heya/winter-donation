@@ -1,6 +1,28 @@
-import { Link } from "react-router-dom";
+
+import { useState } from "react";
+import toast from "react-hot-toast";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+
 
 const ForgotPassword = () => {
+    const location = useLocation();
+    const navigate = useNavigate();
+    const [email, setEmail] = useState(location.state?.email || "")
+
+    const handleResetPassword = e => {
+        e.preventDefault();
+
+        if (!email) {
+            toast.error("Please provide an email address.");
+            return;
+        }
+
+        // Redirect to Gmail
+        window.open("https://mail.google.com", "_blank"); // Open Gmail in a new tab
+        toast.success("Redirecting to Gmail...");
+        navigate("/login"); // Optionally navigate back to the login page
+    }
+
     return (
         <div className="flex justify-center items-center  bg-primary/10 min-h-screen">
             <div className="">
@@ -9,12 +31,16 @@ const ForgotPassword = () => {
                 </div>
 
                 <div className="card bg-primary/20 w-full max-w-md shrink-0 shadow-2xl">
-                    <form className="card-body px-20">
+                    <form onSubmit={handleResetPassword} className="card-body px-20">
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text">Email</span>
                             </label>
-                            <input type="email" placeholder="email" className="input input-bordered " required />
+                            <input type="email" placeholder="email"
+                                value={email}
+                                className="input input-bordered"
+                                onChange={(e) => setEmail(e.target.value)}
+                                required />
                         </div>
                         <div className="form-control">
                             <label className="label">

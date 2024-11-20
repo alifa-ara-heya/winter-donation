@@ -1,10 +1,13 @@
-import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { useContext, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../Providers/AuthProvider";
 import toast from "react-hot-toast";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 const Register = () => {
     const { createUser, setUser, updateUserProfile } = useContext(AuthContext);
+    const navigate = useNavigate();
+    const [showPassword, setShowPassword] = useState(false);
 
     const handleRegister = e => {
         e.preventDefault();
@@ -14,17 +17,36 @@ const Register = () => {
         const password = e.target.password.value;
         console.log(name, email, password, photo);
 
+        const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}$/;
+
+        if (!passwordRegex.test(password)) {
+            toast.error('Please use at least one uppercase, one lowercase, one number and one special character(!,@,&) and make sure the length of the password is more than six characters.');
+            return;
+        }
+
         // create user
         createUser(email, password)
             .then(result => {
-                console.log("User with sign in", result.user);
-                setUser(result.user);
+                const createdUser = result.user;
+                console.log("User with sign in", createdUser);
+                // setUser(result.user);
+
+                //update profile
                 updateUserProfile({ displayName: name, photoURL: photo })
-                toast.success('Registration Successful.')
-
-
-            }).catch(error => {
-                console.log("My error with sign in is", error);
+                    .then(() => {
+                        // Refreshing user to get updated profile
+                        setUser({ ...createdUser, displayName: name, photoURL: photo });
+                        navigate('/');
+                        toast.success('Registration Successful.');
+                    })
+                    .catch((error) => {
+                        console.error("Error updating profile:", error);
+                    });
+                // toast.success('Registration Successful.')
+            })
+            .catch(error => {
+                console.log('ERROR', error.message);
+                toast.error(error.message)
             })
     }
 
@@ -62,16 +84,25 @@ const Register = () => {
                             <input type="text" name="photo" placeholder="Photo URL" className="input input-bordered " required />
                         </div>
                         {/* password */}
-                        <div className="form-control">
+                        <div className="form-control relative">
                             <label className="label">
                                 <span className="label-text">Password</span>
                             </label>
-                            <input type="password" name="password" placeholder="password" className="input input-bordered" required />
-
-                            {/* <label className="label">
-                                <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
-                            </label> */}
+                            <input
+                                type={showPassword ? 'text' : 'password'}
+                                name='password'
+                                placeholder="password"
+                                className="input input-bordered" required />
+                            <button
+                                type="button"
+                                onClick={() => setShowPassword(!showPassword)}
+                                className='btn btn-xs absolute right-2 top-12'>
+                                {
+                                    showPassword ? <FaEyeSlash /> : <FaEye />
+                                }
+                            </button>
                         </div>
+
                         <div className="form-control mt-6">
                             <button className="btn btn-primary bg-primary hover:bg-primary/60 border-none text-black mb-4">Register</button>
                         </div>
