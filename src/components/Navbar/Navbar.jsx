@@ -53,7 +53,7 @@ const Navbar = () => {
                 {
                     user?.email ? (
                         <>
-                            <div className="border rounded-full p-1 border-lime-700"><img className="w-12 h-12 rounded-full" src={user.photoURL} alt="" /></div>
+                            <div className="border rounded-full p-1 border-lime-700"><img className="w-12 h-12 rounded-full object-cover" src={user.photoURL} alt="" /></div>
                             <p className="text-lime-600 hidden md:block">{user.displayName}</p>
                             <button className="btn bg-primary" onClick={signOutUser}>LogOut</button>
                         </>

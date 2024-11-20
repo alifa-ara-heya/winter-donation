@@ -16,7 +16,7 @@ const Dashboard = () => {
                     <img
                         src={user?.photoURL || "https://via.placeholder.com/150"}
                         alt="Profile"
-                        className="w-32 h-32 rounded-full mb-4 border-4 border-lime-700"
+                        className="w-32 h-32 rounded-full mb-4 border-4 border-lime-700 object-cover"
                     />
 
                     {/* Profile Information */}
