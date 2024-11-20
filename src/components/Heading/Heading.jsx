@@ -1,7 +1,7 @@
 
 const Heading = ({ title, subtitle }) => {
     return (
-        <div className="text-center">
+        <div className="text-center" data-aos='fade-up'>
             <h1 className='text-2xl md:text-3xl lg:text-4xl font-bold mb-4 text-lime-800'>
                 {title}
             </h1>

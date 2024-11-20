@@ -25,7 +25,7 @@ const ImpactStories = () => {
                 <Heading title={'Real Stories of Impact'} subtitle={'Your kindness brings warmth to lives in need. Here are their stories:'} />
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 py-6">
                     {stories.map((story, index) => (
-                        <div key={index} className="card image-full shadow-xl">
+                        <div key={index} className="card image-full shadow-xl" data-aos='zoom-in'>
                             <figure>
                                 <img
                                     src={story.image}
@@ -35,13 +35,13 @@ const ImpactStories = () => {
                             </figure>
                             <div className="card-body flex flex-col items-center justify-center">
                                 {/* Quote Block */}
-                                <blockquote className="relative text-center p-6 w-1/2 md:w-3/4">
+                                <blockquote className="relative text-center p-6 w-3/4">
                                     {/* Opening Blockquote */}
                                     <span className="absolute top-0 left-4 text-5xl text-gray-300 font-serif">
                                         &ldquo;
                                     </span>
                                     {/* Quote Text */}
-                                    <p className="text-gray-200 text-lg italic">{story.story}</p>
+                                    <p className="text-gray-200 text-lg italic font-medium">{story.story}</p>
                                     {/* Closing Blockquote */}
                                     <span className="absolute bottom-0 right-2 text-5xl text-gray-400 font-serif">
                                         &rdquo;

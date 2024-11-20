@@ -5,7 +5,7 @@ import winter3 from '../../assets/winter3.jpg'
 import { Link } from "react-router-dom";
 const About = () => {
     return (
-        <div className="w-11/12 mx-auto py-10 max-w-[1440px]">
+        <div className="w-11/12 mx-auto py-10 max-w-[1440px] ">
             <Heading title={"Our Mission"} subtitle={"At WinterAid, we believe that everyone deserves warmth and comfort, especially during the harsh winter months. Our mission is to bridge the gap between those who want to give and those in need by providing a platform that connects donors with vulnerable communities across Bangladesh."}></Heading>
 
             {/* how you can contribute */}
@@ -14,7 +14,7 @@ const About = () => {
 
             <div className="flex flex-col md:flex-row gap-6 items-center justify-center">
                 {/* card-1 */}
-                <div className="card bg-base-100 shadow-xl flex-grow">
+                <div className="card bg-base-100 shadow-xl flex-grow " data-aos="fade-up">
                     <figure className="p-5">
                         <img
                             src={winter1}
@@ -31,7 +31,7 @@ const About = () => {
                 </div>
 
                 {/* card-2 */}
-                <div className="card bg-base-100 shadow-xl flex-grow">
+                <div className="card bg-base-100 shadow-xl flex-grow" data-aos="fade-up">
                     <figure className="p-5">
                         <img
                             src={winter2}
@@ -48,7 +48,7 @@ const About = () => {
                 </div>
 
                 {/* card-3 */}
-                <div className="card bg-base-100 shadow-xl flex-grow">
+                <div className="card bg-base-100 shadow-xl flex-grow" data-aos="fade-up">
                     <figure className="p-5">
                         <img
                             src={winter3}
