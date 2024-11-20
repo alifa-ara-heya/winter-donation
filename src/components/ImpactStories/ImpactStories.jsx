@@ -55,7 +55,7 @@ const ImpactStories = () => {
 
                                 {/* Card Actions */}
                                 <div className="card-actions mt-6">
-                                    <button className="btn bg-primary">Donate Now</button>
+                                    <button className="btn bg-primary animate__animated  animate__pulse animate__infinite">Donate Now</button>
                                 </div>
                             </div>
                         </div>

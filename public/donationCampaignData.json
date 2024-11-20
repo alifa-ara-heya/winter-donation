@@ -1,0 +1,146 @@
+[
+    {
+        "id": 1,
+        "title": "Warm Clothes for Dhaka",
+        "image": "https://i.ibb.co/KmkBhcv/winter-in-bangladesh-mou-aysha-11.jpg",
+        "description": "Donate warm clothes to help underprivileged families in Dhaka city stay warm during winter. Your contribution can make a huge difference in their lives.",
+        "status": "Active",
+        "contactInfo": "contact@winteraid.com | +880123456789",
+        "division": "Dhaka"
+    },
+    {
+        "id": 2,
+        "title": "Blanket Drive in Sylhet",
+        "image": "https://i.ibb.co/X3R5hyM/winter-in-bangladesh-mou-aysha-13.jpg",
+        "description": "Help us distribute blankets to rural communities in Sylhet. Together, we can ensure they are prepared for the harsh winter ahead.",
+        "status": "Active",
+        "contactInfo": "sylhet@winteraid.com | +880987654321",
+        "division": "Sylhet"
+    },
+    {
+        "id": 3,
+        "title": "Winter Essentials for Chittagong",
+        "image": "https://i.ibb.co/94KJcDn/winter-life-in-villages-of-bangladesh-01.jpg",
+        "description": "Provide warm clothing and other essentials to children in Chittagong. Many children lack adequate winter wear and need your support.",
+        "status": "Active",
+        "contactInfo": "chittagong@winteraid.com | +880456123789",
+        "division": "Chittagong"
+    },
+    {
+        "id": 4,
+        "title": "Support Families in Rajshahi",
+        "image": "https://i.ibb.co/C9BPDMz/winter-in-bangladesh-mou-aysha-15.jpg",
+        "description": "Join us in supporting families in Rajshahi with winter essentials. Your donation ensures a safe and warm winter for those in need.",
+        "status": "Completed",
+        "contactInfo": "rajshahi@winteraid.com | +880321654987",
+        "division": "Rajshahi"
+    },
+    {
+        "id": 5,
+        "title": "Khulna Winter Drive",
+        "image": "https://i.ibb.co/w45wV8J/winter-in-bangladesh-mou-aysha-16.jpg",
+        "description": "Donate winter clothes and blankets for residents of Khulna. Your support will help many stay warm during this freezing season.",
+        "status": "Active",
+        "contactInfo": "khulna@winteraid.com | +880789654123",
+        "division": "Khulna"
+    },
+    {
+        "id": 6,
+        "title": "Barisal Blanket Campaign",
+        "image": "https://i.ibb.co/sP3Xs2X/winter-in-bangladesh-mou-aysha-17.jpg",
+        "description": "Provide warm blankets to low-income families in Barisal. Each blanket you donate brings warmth and comfort to someone in need.",
+        "status": "Pending",
+        "contactInfo": "barisal@winteraid.com | +880987123654",
+        "division": "Barisal"
+    },
+    {
+        "id": 7,
+        "title": "Rangpur Winter Relief",
+        "image": "https://i.ibb.co/whJSPGP/winter-in-bangladesh-mou-aysha-19.jpg",
+        "description": "Join our efforts in Rangpur to distribute winter essentials. Your kindness can bring warmth to families facing extreme cold.",
+        "status": "Active",
+        "contactInfo": "rangpur@winteraid.com | +880456789321",
+        "division": "Rangpur"
+    },
+    {
+        "id": 8,
+        "title": "Winter Essentials in Mymensingh",
+        "image": "https://i.ibb.co/cvjBWV3/winter-in-bangladesh-mou-aysha-21.jpg",
+        "description": "Distribute sweaters, jackets, and scarves to children in Mymensingh. Together, we can keep them warm during the chilly season.",
+        "status": "Active",
+        "contactInfo": "mymensingh@winteraid.com | +880654789123",
+        "division": "Mymensingh"
+    },
+    {
+        "id": 9,
+        "title": "Help for Dhaka Slum Areas",
+        "image": "https://i.ibb.co/BqJMmmd/winter-in-bangladesh-mou-aysha-23.jpg",
+        "description": "Support people living in Dhaka's slum areas by donating warm clothes. Even a small contribution can bring significant relief.",
+        "status": "Pending",
+        "contactInfo": "helpdhaka@winteraid.com | +880123654987",
+        "division": "Dhaka"
+    },
+    {
+        "id": 10,
+        "title": "Sylhet Village Outreach",
+        "image": "https://i.ibb.co/RgxnXp2/winter-life-in-villages-of-bangladesh-04.jpg",
+        "description": "Donate to help villagers in Sylhet face the winter season. Every donation ensures someone has the warmth they need.",
+        "status": "Completed",
+        "contactInfo": "villagehelp@winteraid.com | +880321987654",
+        "division": "Sylhet"
+    },
+    {
+        "id": 11,
+        "title": "Chittagong Mountain Relief",
+        "image": "https://i.ibb.co/3T0pmTJ/winter-life-in-villages-of-bangladesh-08.jpg",
+        "description": "Provide winter relief to mountain communities in Chittagong. These areas face extreme conditions and need your help.",
+        "status": "Active",
+        "contactInfo": "mountain@winteraid.com | +880654321789",
+        "division": "Chittagong"
+    },
+    {
+        "id": 12,
+        "title": "Barisal Urban Campaign",
+        "image": "https://i.ibb.co/wWN0w3W/winter-life-in-villages-of-bangladesh-11.jpg",
+        "description": "Urban outreach in Barisal to distribute winter essentials. Help those in urban areas stay warm and safe this winter.",
+        "status": "Active",
+        "contactInfo": "urbanbarisal@winteraid.com | +880987321654",
+        "division": "Barisal"
+    },
+    {
+        "id": 13,
+        "title": "Emergency Aid for Kurigram",
+        "image": "https://i.ibb.co/DYd0Cyq/winter-life-in-villages-of-bangladesh-09.jpg",
+        "description": "Assist flood-affected families in Kurigram with warm clothes and blankets. These families are struggling to stay warm during winter.",
+        "status": "Active",
+        "contactInfo": "kurigram@winteraid.com | +880786543210",
+        "division": "Rangpur"
+    },
+    {
+        "id": 14,
+        "title": "Student Winter Drive in Dhaka",
+        "image": "https://i.ibb.co/HnKmRkk/winter-life-in-villages-of-bangladesh-16.jpg",
+        "description": "Support university students as they organize a winter donation drive in Dhaka. Help them collect and distribute warm clothes.",
+        "status": "Active",
+        "contactInfo": "students@winteraid.com | +880345678901",
+        "division": "Dhaka"
+    },
+    {
+        "id": 15,
+        "title": "Sylhet Family Support Program",
+        "image": "https://i.ibb.co/t2JcQ8K/winter-life-in-villages-of-bangladesh-17.jpg",
+        "description": "Join our family support program in Sylhet. Provide winter essentials to families struggling in remote rural areas.",
+        "status": "Pending",
+        "contactInfo": "familysupport@winteraid.com | +880654123987",
+        "division": "Sylhet"
+    },
+    {
+        "id": 16,
+        "title": "Chittagong Coastal Aid",
+        "image": "https://i.ibb.co/fFsjbQd/girl.jpg",
+        "description": "Provide relief to coastal communities in Chittagong who are braving harsh weather conditions this winter.",
+        "status": "Active",
+        "contactInfo": "coastal@winteraid.com | +880567890123",
+        "division": "Chittagong"
+    }
+]
