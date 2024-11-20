@@ -2,35 +2,34 @@ import { useContext } from "react";
 import { FcGoogle } from "react-icons/fc";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../Providers/AuthProvider";
-// import { auth } from "../firebase/firebase.config";
-// import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+import toast from "react-hot-toast";
 
 const Login = () => {
 
-    // const provider = new GoogleAuthProvider();
+    const { signInWithGoogle, signInUser, setUser, } = useContext(AuthContext);
 
-    // const handleGoogleSignIn2 = () => {
-    //     console.log("Google Sign-In initiated");
-    //     signInWithPopup(auth, provider)
-    //         .then(result => {
-    //             console.log("Google Sign-In successful:", result.user);
-    //             // setUser(result.user);
-    //         })
-    //         .catch(error => {
-    //             console.log("Google Sign-In error:", error);
-    //             // setUser(null);
-    //         })
-    // }
-
-    // const navigate = useNavigate();
-
-    const { signInWithGoogle } = useContext(AuthContext);
-    // console.log(signInWithGoogle);
+    const handleLogin = e => {
+        e.preventDefault();
+        const email = e.target.email.value;
+        const password = e.target.password.value;
+        console.log("signed in user:", email, password);
+        signInUser(email, password)
+            .then(result => {
+                console.log(result.user);
+                e.target.reset();
+                setUser(result.user);
+                toast.success("Login Successful.")
+            })
+            .catch(error => {
+                console.log('my sign in error is', error.message);
+            })
+    }
 
     const handleGoogleSignIn = () => {
         signInWithGoogle()
             .then(result => {
                 console.log('Google Login user', result.user);
+                toast.success("Login successful.")
             })
             .catch(error => {
                 console.log('My error when logged in with Google is', error.message);
@@ -45,18 +44,20 @@ const Login = () => {
                 </div>
 
                 <div className="card bg-primary/20 w-full max-w-md shrink-0 shadow-2xl">
-                    <form className="card-body px-20">
+                    <form onSubmit={handleLogin} className="card-body px-20">
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text">Email</span>
                             </label>
-                            <input type="email" placeholder="email" className="input input-bordered " required />
+                            <input type="email"
+                                name="email" placeholder="email" className="input input-bordered " required />
                         </div>
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text">Password</span>
                             </label>
-                            <input type="password" placeholder="password" className="input input-bordered" required />
+                            <input type="password"
+                                name="password" placeholder="password" className="input input-bordered" required />
                             <label className="label">
                                 <Link to='/forgot-password' className="label-text-alt link link-hover">Forgot password?</Link>
                             </label>

@@ -1,6 +1,32 @@
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../Providers/AuthProvider";
+import toast from "react-hot-toast";
 
 const Register = () => {
+    const { createUser, setUser, updateUserProfile } = useContext(AuthContext);
+
+    const handleRegister = e => {
+        e.preventDefault();
+        const name = e.target.name.value;
+        const photo = e.target.photo.value;
+        const email = e.target.email.value;
+        const password = e.target.password.value;
+        console.log(name, email, password, photo);
+
+        // create user
+        createUser(email, password)
+            .then(result => {
+                console.log("User with sign in", result.user);
+                setUser(result.user);
+                updateUserProfile({ displayName: name, photoURL: photo })
+                toast.success('Registration Successful.')
+
+
+            }).catch(error => {
+                console.log("My error with sign in is", error);
+            })
+    }
 
     return (
         <div className="flex justify-center items-center bg-primary/10 min-h-screen">
@@ -10,7 +36,7 @@ const Register = () => {
                 </div>
 
                 <div className="card bg-primary/20 w-full max-w-md shrink-0 shadow-2xl">
-                    <form className="card-body px-20">
+                    <form onSubmit={handleRegister} className="card-body px-20">
                         {/* name */}
                         <div className="form-control">
                             <label className="label">
