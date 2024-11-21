@@ -10,6 +10,7 @@ import Register from "../Pages/Register";
 import ForgotPassword from "../Pages/ForgotPassword";
 import UpdateProfile from "../Pages/UpdateProfile";
 import PrivateRoute from "./PrivateRoute";
+import DonationDetails from "../Pages/DonationDetails";
 
 const Router = createBrowserRouter(
     [
@@ -24,7 +25,20 @@ const Router = createBrowserRouter(
                 },
                 {
                     path: 'donation-campaigns',
-                    element: <DonationCampaigns />
+                    element: <DonationCampaigns />,
+                    loader: () => fetch('/donationCampaignData.json')
+                },
+                {
+                    path: 'details/:id',
+                    element: <PrivateRoute>
+                        <DonationDetails />
+                    </PrivateRoute>,
+                    loader: async ({ params }) => {
+                        const res = await fetch('/donationCampaignData.json')
+                        const data = await res.json()
+                        const singleData = data.find(d => d.id === parseInt(params.id))
+                        return singleData;
+                    }
                 },
                 {
                     path: 'how-to-help',

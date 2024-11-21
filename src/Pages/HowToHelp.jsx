@@ -9,9 +9,11 @@ const HowToHelp = () => {
             <Heading title="How It Works" subtitle='Donating through WinterAid is simple!' />
 
             <div className="my-12">
-                <div className=' border rounded-md md:w-1/2 mx-auto'><img src={winter5} alt="" className='rounded-md w-full ' /></div>
+                <figure className=' rounded-md md:w-1/2 mx-auto'><img src={winter5} alt="" className='rounded-md w-full ' />
+                    <figcaption className='text-center py-3 text-gray-500 capitalize italic'>Let&apos;s bring smile to these faces</figcaption>
+                </figure>
 
-                <div className='md:p-32 space-y-10'>
+                <div className='md:p-32 md:py-10 space-y-10'>
                     {/* steps to donate */}
                     <div className="my-6">
                         <h2 className="text-2xl font-semibold text-lime-800 mb-4">Steps to Donate</h2>

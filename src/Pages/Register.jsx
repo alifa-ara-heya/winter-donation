@@ -8,6 +8,8 @@ const Register = () => {
     const { createUser, setUser, updateUserProfile } = useContext(AuthContext);
     const navigate = useNavigate();
     const [showPassword, setShowPassword] = useState(false);
+    const [errorMsg, setErrorMsg] = useState('');
+
 
     const handleRegister = e => {
         e.preventDefault();
@@ -17,10 +19,13 @@ const Register = () => {
         const password = e.target.password.value;
         console.log(name, email, password, photo);
 
+        setErrorMsg('');
+
         const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}$/;
 
         if (!passwordRegex.test(password)) {
-            toast.error('Please use at least one uppercase, one lowercase, one number and one special character(!,@,&) and make sure the length of the password is more than six characters.');
+            // toast.error('Please use at least one uppercase, one lowercase, one number and one special character(!,@,&) and make sure the length of the password is more than six characters.');
+            setErrorMsg('Please use at least one uppercase, one lowercase, one number and one special character(!,@,&) and make sure the length of the password is more than six characters.')
             return;
         }
 
@@ -101,6 +106,9 @@ const Register = () => {
                                     showPassword ? <FaEyeSlash /> : <FaEye />
                                 }
                             </button>
+                            {
+                                errorMsg && <p className='text-red-600 text-xs mt-6'>{errorMsg}</p>
+                            }
                         </div>
 
                         <div className="form-control mt-6">
