@@ -17,7 +17,7 @@ const Register = () => {
         const photo = e.target.photo.value;
         const email = e.target.email.value;
         const password = e.target.password.value;
-        console.log(name, email, password, photo);
+        // console.log(name, email, password, photo);
 
         setErrorMsg('');
 
@@ -33,7 +33,7 @@ const Register = () => {
         createUser(email, password)
             .then(result => {
                 const createdUser = result.user;
-                console.log("User with sign in", createdUser);
+                // console.log("User with sign in", createdUser);
                 // setUser(result.user);
 
                 //update profile
@@ -50,7 +50,7 @@ const Register = () => {
                 // toast.success('Registration Successful.')
             })
             .catch(error => {
-                console.log('ERROR', error.message);
+                // console.log('ERROR', error.message);
                 toast.error(error.message)
             })
     }

@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
 const DonationCard = ({ campaign }) => {
-    console.log(campaign);
+    // console.log(campaign);
     const { id, title, image, description, contactInfo, status, divison } = campaign;
     return (
         <div className="card bg-base-100 shadow-xl">

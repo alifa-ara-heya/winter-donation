@@ -6,7 +6,7 @@ import DonationForm from "../components/DonationForm/DonationForm";
 
 const DonationDetails = () => {
     const { id, title, image, description, contactInfo, status, division } = useLoaderData();
-    console.log(id);
+    // console.log(id);
     return (
         <div className="md:p-10">
             <div className="max-w-3xl mx-auto p-6 bg-white rounded-lg shadow-md border">

@@ -14,17 +14,17 @@ const Login = () => {
         e.preventDefault();
         const email = e.target.email.value;
         const password = e.target.password.value;
-        console.log("signed in user:", email, password);
+        // console.log("signed in user:", email, password);
         signInUser(email, password)
             .then(result => {
-                console.log(result.user);
+                // console.log(result.user);
                 e.target.reset();
                 setUser(result.user);
                 toast.success("Login Successful.")
                 navigate('/')
             })
             .catch(error => {
-                console.log('my sign in error is', error.message);
+                // console.log('my sign in error is', error.message);
                 toast.error(`${error.code}`)
             })
     }
@@ -32,12 +32,12 @@ const Login = () => {
     const handleGoogleSignIn = () => {
         signInWithGoogle()
             .then(result => {
-                console.log('Google Login user', result.user);
+                // console.log('Google Login user', result.user);
                 toast.success("Login successful.")
                 navigate('/')
             })
             .catch(error => {
-                console.log('My error when logged in with Google is', error.message);
+                // console.log('My error when logged in with Google is', error.message);
             })
     }
 

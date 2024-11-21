@@ -4,7 +4,7 @@ import Heading from "../components/Heading/Heading";
 
 const DonationCampaigns = () => {
     const campaignsData = useLoaderData();
-    console.log(campaignsData);
+    // console.log(campaignsData);
     return (
         <div className="w-11/12 mx-auto py-6">
             <Heading title={'Donation Campaigns'} subtitle={' Together, we can make winters warmer for those in need.'} />
